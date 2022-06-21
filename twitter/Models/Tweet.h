@@ -2,7 +2,7 @@
 //  Tweet.h
 //  twitter
 //
-//  Created by Eric Moran on 6/20/22.
+//  Created by Eric Moran on 6/21/22.
 //  Copyright © 2022 Emerson Malca. All rights reserved.
 //
 
@@ -24,7 +24,6 @@
 // For Retweets
 @property (nonatomic, strong) User *retweetedByUser;  // If the tweet is a retweet, this will be the user who retweeted
 
-// Methods
 - (instancetype)initWithDictionary:(NSDictionary *)dictionary;
 + (NSMutableArray *)tweetsWithArray:(NSArray *)dictionaries;
 

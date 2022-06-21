@@ -2,7 +2,7 @@
 //  Tweet.m
 //  twitter
 //
-//  Created by Eric Moran on 6/20/22.
+//  Created by Eric Moran on 6/21/22.
 //  Copyright © 2022 Emerson Malca. All rights reserved.
 //
 
@@ -31,6 +31,7 @@
         self.retweeted = [dictionary[@"retweeted"] boolValue];
 
         // TODO: initialize user
+        // initialize user
         NSDictionary *user = dictionary[@"user"];
         self.user = [[User alloc] initWithDictionary:user];
 
