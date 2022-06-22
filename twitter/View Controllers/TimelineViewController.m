@@ -19,6 +19,7 @@
 @property (strong, nonatomic) NSMutableArray *arrayOfTweets;
 @property (nonatomic, strong) UIRefreshControl *refreshControl;
 - (IBAction)didTapLogout:(id)sender;
+- (IBAction)didTapCompose:(id)sender;
 
 
 @end
@@ -46,14 +47,8 @@
 //            NSLog(@"%@", tweets);
             NSLog(@"😎😎😎 Successfully loaded home timeline");
             for (Tweet *tweet in tweets) {
-//                NSString *text = tweet.text;
-//                NSString *favorites = [NSString stringWithFormat:@"%d", tweet.favoriteCount];
                 [self.arrayOfTweets addObject:tweet];
-//                NSLog(@"%@", text);
-//                NSLog(@"%d", tweet.favoriteCount);
             }
-//            NSLog(@"%d", self.arrayOfTweets.count);
-//            NSLog(@"%@", self.arrayOfTweets);
             [self.tableView reloadData];
         } else {
             NSLog(@"😫😫😫 Error getting home timeline: %@", error.localizedDescription);
@@ -110,6 +105,9 @@
 */
 
 
+
+- (IBAction)didTapCompose:(id)sender {
+}
 
 - (IBAction)didTapLogout:(id)sender {
     AppDelegate *appDelegate = (AppDelegate *)[UIApplication sharedApplication].delegate;
