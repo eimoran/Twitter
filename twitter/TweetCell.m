@@ -2,7 +2,7 @@
 //  TweetCell.m
 //  twitter
 //
-//  Created by Eric Moran on 6/20/22.
+//  Created by Eric Moran on 6/21/22.
 //  Copyright © 2022 Emerson Malca. All rights reserved.
 //
 
@@ -21,4 +21,15 @@
     // Configure the view for the selected state
 }
 
+- (IBAction)didTapMessage:(id)sender {
+}
+
+- (IBAction)didTapFavorite:(id)sender {
+}
+
+- (IBAction)didTapRetweet:(id)sender {
+}
+
+- (IBAction)didTapReply:(id)sender {
+}
 @end
