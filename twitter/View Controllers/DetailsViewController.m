@@ -38,7 +38,7 @@
 - (void)refreshData {
     self.text.text = self.tweet.text;
     self.displayName.text = self.tweet.user.name;
-    self.userName.text = [NSString stringWithFormat:@"@%@·", self.tweet.user.screenName];
+    self.userName.text = [NSString stringWithFormat:@"@%@", self.tweet.user.screenName];//·
     self.date.text = self.tweet.createdAtString;
     NSURL *url = [NSURL URLWithString:self.tweet.user.profilePicture];
     [self.profilePic setImageWithURL:url];

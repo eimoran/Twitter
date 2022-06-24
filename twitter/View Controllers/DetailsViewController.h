@@ -13,15 +13,10 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@protocol DetailsViewControllerDelegate
-
-- (void)updateTimeline;
-
-@end
 
 @interface DetailsViewController : UIViewController
 
-@property (nonatomic, weak) id<DetailsViewControllerDelegate> delegate;
+//@property (nonatomic, weak) id<DetailsViewControllerDelegate> delegate;
 @property (weak, nonatomic) Tweet *tweet;
 
 @end
