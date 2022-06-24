@@ -100,7 +100,6 @@
             }];
         }
     [self refreshData];
-    //    [self.delegate getTimeline];
 }
 - (IBAction)didTapFavorite:(id)sender {
     if (self.tweet.favorited) {

@@ -31,7 +31,6 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-//    self.tableView.rowHeight = UITableViewAutomaticDimension;
     [self getTimeline];
     self.tableView.dataSource = self;
     self.tableView.delegate = self;
@@ -42,6 +41,12 @@
     self.refreshControl = [[UIRefreshControl alloc] init];
     [self.refreshControl addTarget:self action:@selector(getTimeline) forControlEvents:UIControlEventValueChanged];
     [self.tableView insertSubview:self.refreshControl atIndex:0];
+}
+
+
+-(void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    [self getTimeline];
 }
 
 - (void)getTimeline {
@@ -90,13 +95,6 @@
         ComposeViewController *composeController = (ComposeViewController*)navigationController.topViewController;
         composeController.delegate = self;
     }
-}
-
-- (void)viewdidAppear
-{
-    [self getTimeline];
-    [self.tableView reloadData];
-    
 }
 
 /*
