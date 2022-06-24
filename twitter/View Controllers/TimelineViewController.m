@@ -32,11 +32,12 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
 //    self.tableView.rowHeight = UITableViewAutomaticDimension;
+    [self getTimeline];
     self.tableView.dataSource = self;
     self.tableView.delegate = self;
     self.arrayOfTweets = [[NSMutableArray alloc] init];
     
-    [self getTimeline];
+    
     
     self.refreshControl = [[UIRefreshControl alloc] init];
     [self.refreshControl addTarget:self action:@selector(getTimeline) forControlEvents:UIControlEventValueChanged];
@@ -65,12 +66,6 @@
     [cell refreshData];
     
     
-    // Set Profile Pic
-//    NSString *URLString = cell.tweet.user.profilePicture;
-//    NSURL *url = [NSURL URLWithString:URLString];
-//    cell.profilePic.image = nil;
-//    [cell.profilePic setImageWithURL:url];
-    
     return cell;
 }
 
@@ -95,7 +90,7 @@
         
         DetailsViewController *detailsVC = [segue destinationViewController];
         NSIndexPath *indexPath = [self.tableView indexPathForCell:sender];
-        detailsVC.cell = [self.tableView dequeueReusableCellWithIdentifier:@"TweetCell" forIndexPath:indexPath];
+//        detailsVC.cell = [self.tableView dequeueReusableCellWithIdentifier:@"TweetCell" forIndexPath:indexPath];
         detailsVC.tweet = self.arrayOfTweets[indexPath.row];
         
         }
@@ -104,7 +99,13 @@
         ComposeViewController *composeController = (ComposeViewController*)navigationController.topViewController;
         composeController.delegate = self;
     }
-   
+}
+
+- (void)viewdidAppear
+{
+    [self getTimeline];
+    [self.tableView reloadData];
+    
 }
 
 /*
@@ -127,6 +128,12 @@
     [self.arrayOfTweets addObject:tweet];
     [self.tableView reloadData];
     [self getTimeline];
+}
+
+- (void)updateTimeline
+{
+    [self getTimeline];
+    [self.tableView reloadData];
 }
 
 - (IBAction)didTapLogout:(id)sender {

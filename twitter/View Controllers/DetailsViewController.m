@@ -49,14 +49,14 @@
     UIImage *retweetIcon;
     self.btnFavorite.selected = self.tweet.favorited;
     self.btnRetweet.selected = self.tweet.retweeted;
-    if (self.btnFavorite.selected)
+    if (self.tweet.favorited)
     {
         favoriteIcon = [UIImage imageNamed:@"favor-icon-red.png"];
     }
     else{
         favoriteIcon = [UIImage imageNamed:@"favor-icon.png"];
     }
-    if (self.btnRetweet.selected)
+    if (self.tweet.retweeted)
     {
         retweetIcon = [UIImage imageNamed:@"retweet-icon-green.png"];
     }
@@ -67,7 +67,6 @@
     [self.btnFavorite setImage:favoriteIcon forState:UIControlStateNormal];
     [self.btnRetweet setImage:retweetIcon forState:UIControlStateNormal];
     
-    [self.cell refreshData];
 }
 
 - (IBAction)didTapMessage:(id)sender {
@@ -100,36 +99,36 @@
                 }
             }];
         }
-    [self.cell refreshData];
-//    [self.delegate getTimeline];
+    [self refreshData];
+    //    [self.delegate getTimeline];
 }
 - (IBAction)didTapFavorite:(id)sender {
     if (self.tweet.favorited) {
-            self.tweet.favorited = false;
-            self.tweet.favoriteCount -= 1;
-        } else {
-            self.tweet.favorited = true;
-            self.tweet.favoriteCount += 1;
-        }
+        self.tweet.favorited = false;
+        self.tweet.favoriteCount -= 1;
+    } else {
+        self.tweet.favorited = true;
+        self.tweet.favoriteCount += 1;
+    }
     
     if (self.tweet.favorited) {
-            [[APIManager shared] favorite:self.tweet completion:^(Tweet *tweet, NSError *error) {
-                if (error) {
-                    NSLog(@"Error favoriting tweet: %@", error.localizedDescription);
-                } else if (tweet) {
-                    NSLog(@"Successfully favorited the following Tweet: \n%@", tweet.text);
-                }
-            }];
-        } else {
-            [[APIManager shared] unfavorite:self.tweet completion:^(Tweet *tweet, NSError *error) {
-                if (error) {
-                    NSLog(@"Error unfavoriting tweet: %@", error.localizedDescription);
-                } else if (tweet) {
-                    NSLog(@"Successfully unfavorited the following Tweet: \n%@", tweet.text);
-                }
-            }];
-        }
-    [self.cell refreshData];
+        [[APIManager shared] favorite:self.tweet completion:^(Tweet *tweet, NSError *error) {
+            if (error) {
+                NSLog(@"Error favoriting tweet: %@", error.localizedDescription);
+            } else if (tweet) {
+                NSLog(@"Successfully favorited the following Tweet: \n%@", tweet.text);
+            }
+        }];
+    } else {
+        [[APIManager shared] unfavorite:self.tweet completion:^(Tweet *tweet, NSError *error) {
+            if (error) {
+                NSLog(@"Error unfavoriting tweet: %@", error.localizedDescription);
+            } else if (tweet) {
+                NSLog(@"Successfully unfavorited the following Tweet: \n%@", tweet.text);
+            }
+        }];
+    }
+    [self refreshData];
 }
 
 - (IBAction)didTapReply:(id)sender {

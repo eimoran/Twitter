@@ -13,17 +13,15 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-//@protocol DetailsViewControllerDelegate
-//
-//- (void)didTapRetweet;
-//- (void)didTapFavorite;
-//
-//@end
+@protocol DetailsViewControllerDelegate
+
+- (void)updateTimeline;
+
+@end
 
 @interface DetailsViewController : UIViewController
 
-//@property (nonatomic, weak) id<DetailsViewControllerDelegate> delegate;
-@property (weak, nonatomic) TweetCell *cell;
+@property (nonatomic, weak) id<DetailsViewControllerDelegate> delegate;
 @property (weak, nonatomic) Tweet *tweet;
 
 @end
