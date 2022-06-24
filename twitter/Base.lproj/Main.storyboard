@@ -316,6 +316,22 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5UA-a2-Z53">
+                                <rect key="frame" x="142" y="107" width="30" height="30"/>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal" image="retweet-icon"/>
+                                <connections>
+                                    <action selector="didTapRetweet:" destination="U3C-0B-B4v" eventType="touchUpInside" id="Yf4-4c-wOP"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XoU-A1-tKK">
+                                <rect key="frame" x="222" y="107" width="30" height="30"/>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal" image="favor-icon"/>
+                                <connections>
+                                    <action selector="didTapFavorite:" destination="U3C-0B-B4v" eventType="touchUpInside" id="upA-2O-F1x"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="KpL-AT-7e5"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -326,6 +342,7 @@
                             <constraint firstItem="pNW-0A-pjP" firstAttribute="leading" secondItem="mry-rt-SwD" secondAttribute="trailing" constant="8" symbolic="YES" id="A6q-Mj-xvP"/>
                             <constraint firstItem="KpL-AT-7e5" firstAttribute="trailing" secondItem="m8C-ep-7wG" secondAttribute="trailing" constant="17" id="F9j-5m-u4j"/>
                             <constraint firstItem="1s7-4b-YOo" firstAttribute="top" secondItem="m8C-ep-7wG" secondAttribute="bottom" constant="16" id="Mag-3p-DSz"/>
+                            <constraint firstItem="5UA-a2-Z53" firstAttribute="centerY" secondItem="1s7-4b-YOo" secondAttribute="centerY" id="Nw3-Hb-Awt"/>
                             <constraint firstItem="KpL-AT-7e5" firstAttribute="trailing" secondItem="tKD-4w-3oH" secondAttribute="trailing" constant="91" id="POI-Az-Mvm"/>
                             <constraint firstItem="Wad-ke-aZ6" firstAttribute="baseline" secondItem="Msa-Mf-aZr" secondAttribute="baseline" id="PPm-wF-ssz"/>
                             <constraint firstItem="Msa-Mf-aZr" firstAttribute="top" secondItem="6bi-2X-DGH" secondAttribute="topMargin" constant="-3" id="Phg-H1-euF"/>
@@ -335,9 +352,12 @@
                             <constraint firstItem="tKD-4w-3oH" firstAttribute="centerY" secondItem="1s7-4b-YOo" secondAttribute="centerY" id="WmX-L4-eUv"/>
                             <constraint firstItem="m8C-ep-7wG" firstAttribute="top" secondItem="Wad-ke-aZ6" secondAttribute="bottom" constant="7.5" id="Zci-GD-Jhp"/>
                             <constraint firstItem="mry-rt-SwD" firstAttribute="top" secondItem="pNW-0A-pjP" secondAttribute="top" id="csi-Db-KEo"/>
+                            <constraint firstItem="XoU-A1-tKK" firstAttribute="centerY" secondItem="1s7-4b-YOo" secondAttribute="centerY" id="eBz-bt-MbC"/>
                             <constraint firstItem="mry-rt-SwD" firstAttribute="top" secondItem="KpL-AT-7e5" secondAttribute="top" id="fCM-rR-4KL"/>
+                            <constraint firstItem="1s7-4b-YOo" firstAttribute="leading" secondItem="5UA-a2-Z53" secondAttribute="trailing" constant="8" symbolic="YES" id="iKK-g2-I6f"/>
                             <constraint firstItem="m8C-ep-7wG" firstAttribute="top" secondItem="pNW-0A-pjP" secondAttribute="bottom" constant="6.5" id="ihF-eJ-3Ee"/>
                             <constraint firstItem="tKD-4w-3oH" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="1s7-4b-YOo" secondAttribute="trailing" constant="8" symbolic="YES" id="j5c-qJ-qzO"/>
+                            <constraint firstItem="tKD-4w-3oH" firstAttribute="leading" secondItem="XoU-A1-tKK" secondAttribute="trailing" constant="8" symbolic="YES" id="jJG-cq-dR0"/>
                             <constraint firstItem="Msa-Mf-aZr" firstAttribute="leading" secondItem="Wad-ke-aZ6" secondAttribute="trailing" constant="8" symbolic="YES" id="rJT-A8-iJt"/>
                             <constraint firstItem="pNW-0A-pjP" firstAttribute="leading" secondItem="m8C-ep-7wG" secondAttribute="leading" id="sxg-iu-iGd"/>
                             <constraint firstItem="KpL-AT-7e5" firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="mry-rt-SwD" secondAttribute="bottom" constant="511" id="uWt-l2-sKn"/>
@@ -345,6 +365,8 @@
                     </view>
                     <navigationItem key="navigationItem" id="5Go-jb-lQJ"/>
                     <connections>
+                        <outlet property="btnFavorite" destination="XoU-A1-tKK" id="UUe-9o-oOf"/>
+                        <outlet property="btnRetweet" destination="5UA-a2-Z53" id="t5p-c5-r5X"/>
                         <outlet property="date" destination="Msa-Mf-aZr" id="pgF-vy-nyO"/>
                         <outlet property="displayName" destination="pNW-0A-pjP" id="Egq-ey-NdV"/>
                         <outlet property="favorites" destination="tKD-4w-3oH" id="nYn-Nd-4VL"/>

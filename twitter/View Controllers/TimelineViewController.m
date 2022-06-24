@@ -47,11 +47,7 @@
     // Get timeline
     [[APIManager shared] getHomeTimelineWithCompletion:^(NSArray *tweets, NSError *error) {
         if (tweets) {
-//            NSLog(@"%@", tweets);
             NSLog(@"😎😎😎 Successfully loaded home timeline");
-//            for (Tweet *tweet in tweets) {
-//                [self.arrayOfTweets addObject:tweet];
-//            }
             self.arrayOfTweets = tweets;
             [self.tableView reloadData];
         } else {
@@ -65,14 +61,6 @@
 {
     TweetCell *cell = [tableView dequeueReusableCellWithIdentifier:@"TweetCell" forIndexPath:indexPath];
     cell.tweet = self.arrayOfTweets[indexPath.row];
-    
-//    cell.displayName.text = cell.tweet.user.name;
-//    cell.date.text = [NSString stringWithFormat:@" %@", cell.tweet.createdAtString];
-//    cell.text.text = cell.tweet.text;
-//    cell.userName.text = cell.tweet.user.screenName;
-//    cell.retweets.text = [NSString stringWithFormat:@"%d", cell.tweet.retweetCount];
-//    cell.favorites.text = [NSString stringWithFormat:@"%d", cell.tweet.favoriteCount];
-    
     
     [cell refreshData];
     
@@ -98,10 +86,18 @@
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     if([segue.identifier isEqualToString:@"details"]){
+//        AppDelegate *appDelegate = (AppDelegate *)[UIApplication sharedApplication].delegate;
+//
+//        UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+//        DetailsViewController *detailsViewController = [storyboard instantiateViewControllerWithIdentifier:@"DetailsViewController"];
+//        appDelegate.window.rootViewController = detailsViewController;
+    
+        
         DetailsViewController *detailsVC = [segue destinationViewController];
         NSIndexPath *indexPath = [self.tableView indexPathForCell:sender];
         detailsVC.cell = [self.tableView dequeueReusableCellWithIdentifier:@"TweetCell" forIndexPath:indexPath];
         detailsVC.tweet = self.arrayOfTweets[indexPath.row];
+        
         }
     else {
         UINavigationController *navigationController = [segue destinationViewController];

@@ -9,10 +9,20 @@
 #import <UIKit/UIKit.h>
 #import "TweetCell.h"
 #import "Tweet.h"
+#import "APIManager.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
+//@protocol DetailsViewControllerDelegate
+//
+//- (void)didTapRetweet;
+//- (void)didTapFavorite;
+//
+//@end
+
 @interface DetailsViewController : UIViewController
+
+//@property (nonatomic, weak) id<DetailsViewControllerDelegate> delegate;
 @property (weak, nonatomic) TweetCell *cell;
 @property (weak, nonatomic) Tweet *tweet;
 

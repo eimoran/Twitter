@@ -74,7 +74,7 @@
     if (self.tweet.retweeted) {
             [[APIManager shared] retweet:self.tweet completion:^(Tweet *tweet, NSError *error) {
                 if (error) {
-                    NSLog(@"Error retweetinge tweet: %@", error.localizedDescription);
+                    NSLog(@"Error retweeting tweet: %@", error.localizedDescription);
                 } else if (tweet) {
                     NSLog(@"Successfully retweeted the following Tweet: \n%@", tweet.text);
                 }
@@ -104,7 +104,7 @@
                 if (error) {
                     NSLog(@"Error favoriting tweet: %@", error.localizedDescription);
                 } else if (tweet) {
-                    NSLog(@"Successfully retweeted the following Tweet: \n%@", tweet.text);
+                    NSLog(@"Successfully favorited the following Tweet: \n%@", tweet.text);
                 }
             }];
         } else {
@@ -112,7 +112,7 @@
                 if (error) {
                     NSLog(@"Error unfavoriting tweet: %@", error.localizedDescription);
                 } else if (tweet) {
-                    NSLog(@"Successfully unretweeted the following Tweet: \n%@", tweet.text);
+                    NSLog(@"Successfully unfavorited the following Tweet: \n%@", tweet.text);
                 }
             }];
         }
