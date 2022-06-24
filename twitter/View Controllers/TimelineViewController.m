@@ -36,8 +36,6 @@
     self.tableView.delegate = self;
     self.arrayOfTweets = [[NSMutableArray alloc] init];
     
-    
-    
     self.refreshControl = [[UIRefreshControl alloc] init];
     [self.refreshControl addTarget:self action:@selector(getTimeline) forControlEvents:UIControlEventValueChanged];
     [self.tableView insertSubview:self.refreshControl atIndex:0];
