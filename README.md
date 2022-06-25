@@ -52,7 +52,7 @@ Please list two areas of the assignment you'd like to **discuss further with you
 
 Here's a walkthrough of implemented user stories:
 
-<img src='https://im2.ezgif.com/tmp/ezgif-2-e48f4c2dbc.gif](https://imgur.com/a/PCLfyHP' />
+<blockquote class="imgur-embed-pub" lang="en" data-id="a/m5CxA6S"  ><a href="//imgur.com/a/m5CxA6S">Twitter</a></blockquote><script async src="//s.imgur.com/min/embed.js" charset="utf-8"></script>
 
 GIF created with [Kap](https://getkap.co/).
 
