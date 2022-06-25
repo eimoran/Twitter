@@ -52,7 +52,7 @@ Please list two areas of the assignment you'd like to **discuss further with you
 
 Here's a walkthrough of implemented user stories:
 
-<img src='https://im2.ezgif.com/tmp/ezgif-2-e48f4c2dbc.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
+<img src='https://im2.ezgif.com/tmp/ezgif-2-e48f4c2dbc.gif' width='250' />
 
 GIF created with [Kap](https://getkap.co/).
 
