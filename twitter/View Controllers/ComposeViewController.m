@@ -22,6 +22,35 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    [self.composeField becomeFirstResponder];
+    
+}
+
+- (void)textViewDidBeginEditing:(UITextView *)textView
+{
+    self.characterCount.text = @"0/280 Characters";
+}
+
+- (void)textViewDidChange:(UITextView *)textView
+{
+    NSString *substring = [NSString stringWithString:self.composeField.text];
+    
+    self.characterCount.hidden = false;
+    
+    self.characterCount.text = [NSString stringWithFormat:@"%lu/280 Characters", substring.length];
+    
+    
+    
+    if (substring.length == 280)
+    {
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Character Count Reached" message:@"You have reached the maximum amount of characters" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles: nil];
+        [alert show];
+        self.characterCount.textColor = [UIColor redColor];
+    }
+    else if (substring.length < 280)
+    {
+        self.characterCount.textColor = [UIColor blackColor];
+    }
 }
 
 /*

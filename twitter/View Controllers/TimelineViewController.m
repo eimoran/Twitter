@@ -20,6 +20,7 @@
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (strong, nonatomic) NSMutableArray *arrayOfTweets;
 @property (nonatomic, strong) UIRefreshControl *refreshControl;
+@property (weak, nonatomic) IBOutlet UILabel *tweetTextView;
 
 - (IBAction)didTapLogout:(id)sender;
 - (IBAction)didTapCompose:(id)sender;
@@ -32,6 +33,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self getTimeline];
+    [self updateTextView];
     self.tableView.dataSource = self;
     self.tableView.delegate = self;
     self.arrayOfTweets = [[NSMutableArray alloc] init];
@@ -39,6 +41,7 @@
     self.refreshControl = [[UIRefreshControl alloc] init];
     [self.refreshControl addTarget:self action:@selector(getTimeline) forControlEvents:UIControlEventValueChanged];
     [self.tableView insertSubview:self.refreshControl atIndex:0];
+    
 }
 
 
@@ -65,7 +68,6 @@
 {
     TweetCell *cell = [tableView dequeueReusableCellWithIdentifier:@"TweetCell" forIndexPath:indexPath];
     cell.tweet = self.arrayOfTweets[indexPath.row];
-    
     [cell refreshData];
     
     
@@ -94,6 +96,16 @@
         composeController.delegate = self;
     }
 }
+
+- (void)updateTextView {
+//    self.tweetTextView.
+}
+
+//- (void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath{
+//    if(indexPath.row + 1 == self.arrayOfTweets.count) {
+//        [self getTimeline];
+//    }
+//}
 
 /*
 #pragma mark - Navigation
