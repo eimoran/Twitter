@@ -31,7 +31,7 @@ The following **stretch** features are implemented:
 - [ ] Reply to any Tweet (**2 points**)
   - Replies should be prefixed with the username
   - The `reply_id` should be set when posting the tweet
-- [ ] See a character count when composing a Tweet (as well as a warning) (280 characters) (**1 point**)
+- [x] See a character count when composing a Tweet (as well as a warning) (280 characters) (**1 point**)
 - [ ] Load more tweets once they reach the bottom of the feed using infinite loading similar to the actual Twitter client
 - [ ] Click on a Profile image to reveal another user's profile page, including:
   - Header view: picture and tagline
@@ -52,7 +52,7 @@ Please list two areas of the assignment you'd like to **discuss further with you
 
 Here's a walkthrough of implemented user stories:
 
-<img src='https://im2.ezgif.com/tmp/ezgif-2-e48f4c2dbc.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
+<blockquote class="imgur-embed-pub" lang="en" data-id="a/m5CxA6S"  ><a href="//imgur.com/a/m5CxA6S">Twitter</a></blockquote>
 
 GIF created with [Kap](https://getkap.co/).
 
